@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .__nuxt-error-page {
   padding: 1rem;
   color: #47494E;

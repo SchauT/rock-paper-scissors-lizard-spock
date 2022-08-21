@@ -18,6 +18,7 @@ export default {
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: white;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -43,11 +44,8 @@ body, html {
 body {
   background: radial-gradient(ellipse at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  text-align: center;
-  /* min-height: 200px; */
   align-items: center;
+  align-content: center;
 }
 </style>

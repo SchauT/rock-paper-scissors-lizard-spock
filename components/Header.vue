@@ -26,12 +26,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid orange;
 }
 .header-outline {
   width: 80%;
   max-width: 600px;
-  margin: 50px 0 20px 0;
+  margin: 50px;
   border: 3px solid hsl(217, 16%, 45%);
   border-radius: 20px;
 

@@ -1,10 +1,14 @@
 <template>
   <div class="container">
     <div class="header-outline">
-      <img class="logo" src="~/assets/logo.svg" />
+      <img class="logo" src="~/assets/logo.svg">
       <div class="score-display">
-        <h4 class="score-text">SCORE</h4>
-        <h1 class="score">{{ score }}</h1>
+        <h4 class="score-text">
+          SCORE
+        </h4>
+        <h1 class="score">
+          {{ score }}
+        </h1>
       </div>
     </div>
   </div>
@@ -12,9 +16,9 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      score: 0,
+      score: 0
     }
   }
 }

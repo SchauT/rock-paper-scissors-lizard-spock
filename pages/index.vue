@@ -1,19 +1,21 @@
 <template>
   <div class="__nuxt-landing-page">
     <Game class="game-container" />
-    <div class="rules-button">RULES</div>
+    <div class="rules-button">
+      RULES
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Game from '~/components/Game.vue';
+import Game from '~/components/Game.vue'
 
 export default Vue.extend({
-    name: "RPSLS Game",
-    components: {
-      Game
-    }
+  name: 'RPSLS Game',
+  components: {
+    Game
+  }
 })
 </script>
 

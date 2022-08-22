@@ -1,6 +1,6 @@
 <template>
   <div class="game">
-    <img class="bg-pentagon" src="~/assets/bg-pentagon.svg" />
+    <img class="bg-pentagon" src="~/assets/bg-pentagon.svg">
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
- 
+
   border: 1px solid purple;
 }
 .bg-pentagone .truc {

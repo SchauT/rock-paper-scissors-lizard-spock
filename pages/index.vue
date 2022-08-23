@@ -15,6 +15,16 @@ export default Vue.extend({
   name: 'RPSLS Game',
   components: {
     Game
+  },
+  head () {
+    return {
+      title: 'Rock Paper Scissors Lizard Spock Game',
+      meta: [
+        {
+          content: "The best Rock Paper Scissors Lizard Spock game you'll see in your life !"
+        }
+      ]
+    }
   }
 })
 </script>
@@ -22,8 +32,6 @@ export default Vue.extend({
 <style scoped>
 .game-container {
   height: 60vh;
-
-  border: 1px solid white;
 }
 .rules-button {
   position: absolute;
@@ -52,9 +60,6 @@ export default Vue.extend({
   .rules-button {
     right: 50%;
     transform: translateX(50%);
-  }
-  .game-container {
-    size: 50%;
   }
 }
 </style>

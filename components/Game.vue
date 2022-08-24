@@ -2,19 +2,91 @@
   <div class="game">
     <div class="step1-container">
       <img class="bg-pentagon" src="~/assets/bg-pentagon.svg">
-      <GameButton class="game-button scissors-button" type="scissors" color-a="hsl(40, 84%, 53%)" color-b="hsl(39, 89%, 49%)" />
-      <GameButton class="game-button paper-button" type="paper" color-a="hsl(230, 89%, 65%)" color-b="hsl(230, 89%, 62%)" />
-      <GameButton class="game-button rock-button" type="rock" color-a="hsl(349, 70%, 56%)" color-b="hsl(349, 71%, 52%)" />
-      <GameButton class="game-button lizard-button" type="lizard" color-a="hsl(261, 72%, 63%)" color-b="hsl(261, 73%, 60%)" />
-      <GameButton class="game-button spock-button" type="spock" color-a="hsl(189, 58%, 57%)" color-b="hsl(189, 59%, 53%)" />
+      <GameButton class="game-button scissors-button" type="scissors" color-a="hsl(40, 84%, 53%)" color-b="hsl(39, 89%, 49%)" @onClick="play" />
+      <GameButton class="game-button paper-button" type="paper" color-a="hsl(230, 89%, 65%)" color-b="hsl(230, 89%, 62%)" @onClick="play" />
+      <GameButton class="game-button rock-button" type="rock" color-a="hsl(349, 70%, 56%)" color-b="hsl(349, 71%, 52%)" @onClick="play" />
+      <GameButton class="game-button lizard-button" type="lizard" color-a="hsl(261, 72%, 63%)" color-b="hsl(261, 73%, 60%)" @onClick="play" />
+      <GameButton class="game-button spock-button" type="spock" color-a="hsl(189, 58%, 57%)" color-b="hsl(189, 59%, 53%)" @onClick="play" />
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import GameButton from './GameButton.vue'
+
+type playType = 'scissors' | 'paper' | 'rock' | 'lizard' | 'spock';
+type players = 'player' | 'computer' | 'draw';
+
+function sleep(ms : number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
+async function getRandomPlay () {
+  await sleep(1000);
+  const randInt : number = Math.floor(Math.random() * 5)
+  switch (randInt) {
+    case 0:
+      return 'scissors'
+    case 1:
+      return 'paper'
+    case 2:
+      return 'rock'
+    case 3:
+      return 'lizard'
+    default:
+      return 'spock'
+  }
+};
+
 export default {
-  components: { GameButton }
+  components: { GameButton },
+  methods: {
+    async play (played : playType) {
+      console.log('player played ' + played)
+
+      const computed : playType = await getRandomPlay()
+      console.log('computer played ' + computed)
+
+      let winner : players = 'player'
+      switch (played) {
+        case 'scissors':
+          if (computed === 'rock' || computed === 'spock') {
+            winner = 'computer';
+          }
+          if (computed === 'scissors') { winner = 'draw'; }
+          break;
+
+        case 'paper':
+          if (computed === 'scissors' || computed === 'lizard') {
+            winner = 'computer';
+          }
+          if (computed === 'paper') { winner = 'draw'; }
+          break;
+
+        case 'rock':
+          if (computed === 'paper' || computed === 'spock') {
+            winner = 'computer';
+          }
+          if (computed === 'rock') { winner = 'draw'; }
+          break;
+
+        case 'lizard':
+          if (computed === 'rock' || computed === 'scissors') {
+            winner = 'computer';
+          }
+          if (computed === 'lizard') { winner = 'draw'; }
+          break;
+
+        default:
+          if (computed === 'lizard' || computed === 'paper') {
+            winner = 'computer';
+          }
+          if (computed === 'spock') { winner = 'draw'; }
+          break;
+      }
+
+      console.log(winner + ' wins !')
+    }
+  }
 }
 </script>
 

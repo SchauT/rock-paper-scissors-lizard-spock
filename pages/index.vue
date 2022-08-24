@@ -1,20 +1,23 @@
 <template>
   <div class="__nuxt-landing-page">
     <Game class="game-container" />
-    <div class="rules-button">
+    <div class="rules-button" @click="showHelp">
       RULES
     </div>
+    <HelpPopup class="help-popup" v-show="isHelpVisible" @closeHelp="closeHelp"/>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import Game from '~/components/Game.vue'
+import HelpPopup from '~/components/HelpPopup.vue';
 
 export default Vue.extend({
   name: 'RPSLSgame',
   components: {
-    Game
+    Game,
+    HelpPopup
   },
   head () {
     return {
@@ -27,6 +30,19 @@ export default Vue.extend({
             "The best Rock Paper Scissors Lizard Spock game you'll see in your life !"
         }
       ]
+    }
+  },
+  data() {
+    return {
+      isHelpVisible: false
+    };
+  },
+  methods: {
+    showHelp() {
+      this.isHelpVisible = true;
+    },
+    closeHelp() {
+      this.isHelpVisible = false;
     }
   }
 })

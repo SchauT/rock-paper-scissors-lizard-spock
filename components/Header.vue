@@ -23,7 +23,7 @@ export default {
     }
   },
   created () {
-    this.$nuxt.$on('updateScore', $event => this.updateScore($event))
+    this.$nuxt.$on('emitWinner', $event => this.updateScore($event))
   },
   methods: {
     updateScore (winner) {

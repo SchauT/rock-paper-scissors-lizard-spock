@@ -121,7 +121,7 @@ export default {
           break
       }
 
-      $nuxt.$emit('updateScore', winner)
+      $nuxt.$emit('emitWinner', winner)
     }
   }
 }
@@ -134,9 +134,6 @@ export default {
   align-items: center;
 
   border: 0.5px solid white;
-}
-.bg-pentagon {
-  border: 2px solid purple;
 }
 .step1-container {
   position: relative;

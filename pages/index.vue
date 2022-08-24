@@ -12,7 +12,7 @@ import Vue from 'vue'
 import Game from '~/components/Game.vue'
 
 export default Vue.extend({
-  name: 'RPSLS Game',
+  name: 'RPSLSgame',
   components: {
     Game
   },
@@ -21,6 +21,8 @@ export default Vue.extend({
       title: 'Rock Paper Scissors Lizard Spock Game',
       meta: [
         {
+          hid: 'rock paper scissors lizard spock game',
+          name: 'rock paper scissors lizard spock game',
           content: "The best Rock Paper Scissors Lizard Spock game you'll see in your life !"
         }
       ]

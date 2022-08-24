@@ -7,7 +7,7 @@
           SCORE
         </h4>
         <h1 class="score">
-          {{ score }}
+          {{ playerScore }}-{{ computerScore }}
         </h1>
       </div>
     </div>
@@ -18,7 +18,20 @@
 export default {
   data () {
     return {
-      score: 0
+      playerScore: 0,
+      computerScore: 0
+    }
+  },
+  created () {
+    this.$nuxt.$on('updateScore', $event => this.updateScore($event))
+  },
+  methods: {
+    updateScore (winner) {
+      if (winner === 'player') {
+        this.playerScore++
+      } else if (winner === 'computer') {
+        this.computerScore++
+      }
     }
   }
 }
@@ -66,4 +79,5 @@ export default {
   font-size: 400%;
   color: hsl(229, 25%, 31%);
 }
-</style>>
+</style>
+>

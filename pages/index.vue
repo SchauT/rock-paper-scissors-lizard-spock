@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import Game from '~/components/Game.vue'
 
@@ -23,7 +23,8 @@ export default Vue.extend({
         {
           hid: 'rock paper scissors lizard spock game',
           name: 'rock paper scissors lizard spock game',
-          content: "The best Rock Paper Scissors Lizard Spock game you'll see in your life !"
+          content:
+            "The best Rock Paper Scissors Lizard Spock game you'll see in your life !"
         }
       ]
     }
@@ -46,8 +47,8 @@ export default Vue.extend({
   border-radius: 5px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all .2s;
-  color:white;
+  transition: all 0.2s;
+  color: white;
   font-weight: 500;
   text-decoration: none;
   font-size: x-large;

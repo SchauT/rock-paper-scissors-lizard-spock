@@ -17,8 +17,8 @@ export default {
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   color: white;
   font-size: 16px;
   word-spacing: 1px;
@@ -36,14 +36,19 @@ html {
   margin: 0;
 }
 
-body, html {
+body,
+html {
   width: 100%;
   height: 100%;
   margin: 0px;
 }
 
 body {
-  background: radial-gradient(ellipse at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  background: radial-gradient(
+    ellipse at top,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
